@@ -1,40 +1,15 @@
-[gd_scene load_steps=9 format=3 uid="uid://5kdkgg1387nh"]
+[gd_scene load_steps=4 format=3 uid="uid://5kdkgg1387nh"]
 
 [ext_resource type="Script" uid="uid://caxpcqgyq1x5" path="res://controller.gd" id="1_h2yge"]
-[ext_resource type="Shader" uid="uid://cgck6x1blha3h" path="res://gradient.gdshader" id="1_ig7tw"]
 [ext_resource type="Texture2D" uid="uid://cwrh2j1yr1mhs" path="res://triangle.png" id="2_0xm2m"]
-
-[sub_resource type="Gradient" id="Gradient_0xm2m"]
-interpolation_mode = 2
-interpolation_color_space = 2
-colors = PackedColorArray(1, 0, 0, 1, 0, 1, 1, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_h2yge"]
-gradient = SubResource("Gradient_0xm2m")
-
-[sub_resource type="Gradient" id="Gradient_ig7tw"]
-interpolation_mode = 2
-interpolation_color_space = 2
-offsets = PackedFloat32Array(0.0245902, 0.204918, 0.491803, 1)
-colors = PackedColorArray(0, 1, 0.933333, 1, 1, 0, 0, 1, 0.843137, 1, 0.552941, 1, 0, 1, 1, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_0xm2m"]
-gradient = SubResource("Gradient_ig7tw")
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_1bvp3"]
-shader = ExtResource("1_ig7tw")
-shader_parameter/gradient2 = SubResource("GradientTexture2D_h2yge")
-shader_parameter/gradient3 = SubResource("GradientTexture2D_0xm2m")
-shader_parameter/colors = 1
-shader_parameter/amount = 0.0
-shader_parameter/rotation = 37.321
+[ext_resource type="Material" uid="uid://dhxo57l6dbmv4" path="res://material.tres" id="2_h2yge"]
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_h2yge")
 
 [node name="ColorRect" type="TextureRect" parent="."]
 texture_filter = 1
-material = SubResource("ShaderMaterial_1bvp3")
+material = ExtResource("2_h2yge")
 offset_left = 100.0
 offset_top = 87.0
 offset_right = 294.0
