@@ -1,0 +1,28 @@
+[gd_resource type="ShaderMaterial" load_steps=6 format=3 uid="uid://dhxo57l6dbmv4"]
+
+[ext_resource type="Shader" uid="uid://cgck6x1blha3h" path="res://gradient.gdshader" id="1_rqskn"]
+
+[sub_resource type="Gradient" id="Gradient_0xm2m"]
+interpolation_mode = 2
+interpolation_color_space = 2
+colors = PackedColorArray(1, 0, 0, 1, 0, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_h2yge"]
+gradient = SubResource("Gradient_0xm2m")
+
+[sub_resource type="Gradient" id="Gradient_ig7tw"]
+interpolation_mode = 2
+interpolation_color_space = 2
+offsets = PackedFloat32Array(0.0245902, 0.204918, 0.491803, 1)
+colors = PackedColorArray(0, 1, 0.933333, 1, 1, 0, 0, 1, 0.843137, 1, 0.552941, 1, 0, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_0xm2m"]
+gradient = SubResource("Gradient_ig7tw")
+
+[resource]
+shader = ExtResource("1_rqskn")
+shader_parameter/gradient2 = SubResource("GradientTexture2D_h2yge")
+shader_parameter/gradient3 = SubResource("GradientTexture2D_0xm2m")
+shader_parameter/colors = 1
+shader_parameter/amount = 0.0
+shader_parameter/rotation = 37.321
